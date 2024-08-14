@@ -2,15 +2,15 @@
 This Verilog module implements a single-port RAM (Random Access Memory) with configurable address width, data width, and depth. It allows for the storage and retrieval of data based on the input address. The module supports both read and write operations, controlled by the 'we' (Write Enable) signal. The module operates on a positive edge-triggered clock signal.
 ![image](https://github.com/user-attachments/assets/b8be5d79-b4d1-451f-86f0-44a35cdcab21)
 # Module Ports
-data (input[data_width-1:0]): Input data to be written into the RAM when 'we' is asserted.
-addr (input[addr_width-1:0]): Address input to specify the location in the RAM for read or write operations.
-we (input): Write enable signal. When asserted, data is written into the RAM at the specified address.
-clk (input): Clock input signal for synchronization.
-q (output[data_width-1:0]): Output data retrieved from the RAM based on the input address.
+- data (input[data_width-1:0]): Input data to be written into the RAM when 'we' is asserted.
+- addr (input[addr_width-1:0]): Address input to specify the location in the RAM for read or write operations.
+- we (input): Write enable signal. When asserted, data is written into the RAM at the specified address.
+- clk (input): Clock input signal for synchronization.
+- q (output[data_width-1:0]): Output data retrieved from the RAM based on the input address.
 # Parameters
-addr_width: Configurable parameter to set the width of the address bus.
-data_width: Configurable parameter to set the width of the data bus.
-depth: Configurable parameter to set the depth (number of memory locations) of the RAM.
+- addr_width: Configurable parameter to set the width of the address bus.
+- data_width: Configurable parameter to set the width of the data bus.
+- depth: Configurable parameter to set the depth (number of memory locations) of the RAM.
 # Implementation
 The RAM is implemented using a Verilog array ram with depth number of elements, each element being a register of data_width bits. Data is stored and retrieved from this array based on the input address. Write operation occurs when 'we' is asserted, and data is written into the RAM at the address specified by addr. Read operation occurs otherwise, where data is retrieved from the RAM based on the address stored in addr_reg, which is updated on every clock cycle.
 # Usage
