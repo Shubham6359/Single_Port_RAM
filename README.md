@@ -16,6 +16,6 @@ When the `we` (write enable) signal is high, the data on the `data` input is wri
 # Read Operation
 When the `we` signal is low, the address specified by the `addr` input is stored in an internal register (`addr_reg`). The data at the location specified by `addr_reg` is continuously output on the `q` port.
 # Implementation
-The RAM is implemented using a Verilog array 'ram' with 'depth' number of elements, each element being a register of 'data_width' bits. Data is stored and retrieved from this array based on the input address. Write operation occurs when 'we' is asserted, and data is written into the RAM at the address specified by 'addr'. Read operation occurs otherwise, where data is retrieved from the RAM based on the address stored in 'addr_reg', which is updated on every clock cycle.
+The RAM is implemented using a Verilog array `ram` with `depth` number of elements, each element being a register of `data_width` bits. Data is stored and retrieved from this array based on the input address. Write operation occurs when `we` is asserted, and data is written into the RAM at the address specified by `addr`. Read operation occurs otherwise, where data is retrieved from the RAM based on the address stored in `addr_reg`, which is updated on every clock cycle.
 # Usage
-Instantiate this module in your Verilog design and provide appropriate connections to the input and output ports. Ensure that the parameters 'addr_width', 'data_width', and 'depth' are set according to your design requirements.
+Instantiate this module in your Verilog design and provide appropriate connections to the input and output ports. Ensure that the parameters `addr_width`, `data_width`, and `depth` are set according to your design requirements.
